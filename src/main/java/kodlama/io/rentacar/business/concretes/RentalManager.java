@@ -72,9 +72,7 @@ public class RentalManager implements RentalService {
         carService.changeState(request.getCarId(), State.RENTED);
         CreateRentalResponse response = mapper.map(rental, CreateRentalResponse.class);
 
-        // Create Invoice
-        // Car car = mapper.map(carService.getById(request.getCarId()), Car.class);
-        // rental.setCar(car);
+
         CreateInvoiceRequest invoiceRequest = new CreateInvoiceRequest();
         createInvoiceRequest(request, invoiceRequest, rental);
         invoiceService.add(invoiceRequest);
