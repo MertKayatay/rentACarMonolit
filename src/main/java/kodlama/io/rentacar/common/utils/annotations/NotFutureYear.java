@@ -8,10 +8,8 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-// bu projede anotasyonlar dto lar içindeki field'lar için kullanıldı
-// parametreler içinde kullanılabilir
+
 @Target({ElementType.FIELD,ElementType.PARAMETER})
-// anotasyon runtime boyunca geçerli olsun
 @Retention(RetentionPolicy.RUNTIME)
 @Constraint(validatedBy = NotFutureYearValidator.class)
 public @interface NotFutureYear {

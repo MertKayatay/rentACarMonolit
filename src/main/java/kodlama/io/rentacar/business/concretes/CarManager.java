@@ -40,7 +40,6 @@ public class CarManager implements CarService {
         rules.checkIfCarExists(id);
         Car car = repository.findById(id).orElseThrow();
         GetCarResponse response = mapper.map(car, GetCarResponse.class);
-//        response.setBrandName(car.getModel().getBrand().getName());
 
         return response;
     }
